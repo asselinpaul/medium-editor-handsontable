@@ -14,13 +14,13 @@ Demo: []()
 You can install manually or either by using npm or bower:
 
 ```
-npm install medium-editor-tables
+npm install medium-editor-handsontable
 ```
 
 or
 
 ```
-bower install medium-editor-tables
+bower install medium-editor-handsontable
 ```
 
 On your app, link the style and the script and initialize MediumEditor with the table extension:
