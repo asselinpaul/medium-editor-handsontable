@@ -1,0 +1,14 @@
+lint:
+  - jscs
+  - jshint
+
+js:
+  - uglify
+
+css:
+  - autoprefixer
+  - cssmin
+
+default:
+  - css
+  - js

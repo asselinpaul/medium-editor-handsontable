@@ -1,0 +1,37 @@
+{
+  "name": "medium-editor-handsontable",
+  "homepage": "https://github.com/asselinpaul/medium-editor-handsontable",
+  "authors": [
+    "Paul Asselin <pa.asselin@gmail.com>"
+  ],
+  "description": "MediumEditor extension to allow handsontable spreadsheets.",
+  "main": [
+    "dist/js/medium-editor-handsontable.js",
+    "dist/css/medium-editor-handsontable.css"
+  ],
+  "keywords": [
+    "wysiwyg",
+    "medium",
+    "rich-text",
+    "editor",
+    "spreadsheet",
+    "spreadsheets",
+    "handsontable",
+    "excel"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "demo",
+    "package.json",
+    "README.md",
+    "CHANGES.md"
+  ],
+  "dependencies": {
+    "medium-editor": "5.0.0",
+    "normalize.css": "3.0.3"
+  }
+}

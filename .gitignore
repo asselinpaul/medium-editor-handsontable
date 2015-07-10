@@ -1,0 +1,12 @@
+*~
+*.swp
+.DS_Store
+*.swo
+node_modules/
+npm-debug.log
+.grunt/
+_SpecRunner.html
+reports/
+coverage/
+._*
+bower_components/
