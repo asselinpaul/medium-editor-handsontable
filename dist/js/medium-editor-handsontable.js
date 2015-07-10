@@ -364,6 +364,7 @@ var contextMenu;
         this.hasForm = true;
         this.isFormVisible = false;
         this.createButton();
+        parse();
     }
 
     MediumEditorSpreadsheet.prototype = {
