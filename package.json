@@ -1,6 +1,6 @@
 {
   "name": "medium-editor-handsontable",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Paul Asselin <pa.asselin@gmail.com>",
   "description": "MediumEditor extension to allow handsontable spreadsheets.",
   "main": "dist/js/medium-editor-handsontable.js",
