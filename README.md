@@ -94,9 +94,16 @@ On your app, link the style and the script and initialize MediumEditor with the 
 ...
 ```
 
+## Saving states
+Saving states is easy and compatible with the medium-editor ```.serialize``` method. In order to make this work, the extension keeps the dimensions and data of the spreadsheets in the respective element's data attributes (updated as the spreadsheet is edited).
+
+Serializing the editor therefore saves the state in plain html: ``` data-height="2" data-width="2" data-data="[["1","2"],["3","4"]]" ```
+
+When the serialised data is loaded and medium-editor-handsontable is initialised, the spreadsheet elements are re-created by the ```parse()``` method. 
+
 ## Demo
 
-Clone the repository and:
+Clone the repository and: 
 
 ```
 bower install
@@ -114,4 +121,4 @@ grunt
 ## License
 The extension is based on the following project: [https://github.com/yabwe/medium-editor-tables](https://github.com/yabwe/medium-editor-tables)
 
-MIT: [https://github.com/asselinpaul/medium-editor-handsontable](https://github.com/asselinpaul/medium-editor-handsontable)
+MIT: [https://github.com/asselinpaul/medium-editor-handsontable/blob/master/LICENSE](https://github.com/asselinpaul/medium-editor-handsontable/blob/master/LICENSE)
