@@ -2,7 +2,7 @@
 
 MediumEditor Handsontable is an extension to add [handsontable](http://handsontable.com/) spreadsheets to [MediumEditor](https://github.com/yabwe/medium-editor).
 
-###Demo: [https://asselinpaul.github.io/medium-editor-handsontable/](https://asselinpaul.github.io/medium-editor-handsontable/)
+Demo: [https://asselinpaul.github.io/medium-editor-handsontable/](https://asselinpaul.github.io/medium-editor-handsontable/)
 
 --
 
