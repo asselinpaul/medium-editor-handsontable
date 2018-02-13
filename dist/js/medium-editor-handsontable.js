@@ -85,7 +85,7 @@ var contextMenu;
     }
 
     function parse() {
-        var spreadsheets = document.getElementsByClassName('handsontable');
+        var spreadsheets = document.getElementsByClassName('medium-text-handsontable');
         for (var k = 0; k < spreadsheets.length; k++) {
             if (spreadsheets[k].id !== '') {
                 var id = spreadsheets[k].id;
@@ -301,7 +301,7 @@ var contextMenu;
                 //initialise a blank two dimensional array
                 var data = new Array(parseInt(rows) + 1);
                 for (var i = 0; i < data.length; i++) {
-                    data[i] = new Array(parseInt(cols) + 1);
+                    data[i] = Array(parseInt(cols) + 1).fill("");
                 }
 
                 draw(container, data, contextMenuBool, readOnlyBool);
@@ -313,7 +313,7 @@ var contextMenu;
             var text = getSelectionText(this._doc);
 
             html += text;
-            html += '<div id="spreadsheet' + id + '"></div>';
+            html += ' <div id="spreadsheet' + id + '"> </div> ';
             return html;
         }
     };
@@ -325,14 +325,49 @@ var contextMenu;
         container.dataset.data = JSON.stringify(data);
     }
 
+    var checkboxRenderer;
+
+    checkboxRenderer = function(instance, td, row, col, prop, value, cellProperties) {
+        Handsontable.renderers.TextRenderer.apply(this, arguments);
+        if (value = '') {
+            td.html = '<input type="checkbox">'
+        }
+        td.style.backgroundColor = 'yellow';
+
+    };
+
     function draw(container, data, contextMenuBool, readOnlyBool) {
+        var contextMenuOptions;
+        if (contextMenuBool) {
+            contextMenuOptions = ['row_above', 'row_below', '---------', 'col_left',
+                'col_right', '---------', 'remove_row', 'remove_col',
+                '---------', 'undo', 'redo', 'make_read_only',
+                '---------', 'alignment', {
+                    key: 'add_checkmark',
+                    name: 'Insert checkmark',
+                    callback: function(key, selection) {
+                        for (var i = selection.start.col; i <= selection.end.col; i++) {
+                            for (var j = selection.start.row; j <= selection.end.row; j++) {
+                                this.setDataAtCell(j, i, '<input type="checkbox">');
+
+                            }
+                        }
+                    }
+                }
+
+            ];
+        } else {
+            contextMenuOptions = false;
+        }
         var html = new Handsontable(container, {
             data: data,
+            className: "medium-text-handsontable",
             rowHeaders: true,
             colHeaders: true,
-            contextMenu: contextMenuBool,
+            contextMenu: contextMenuOptions,
             autoWrapCol: true,
             autoWrapRow: true,
+            renderer: 'html',
             placeholder: ' ',
             autoColumnSize: true,
             readOnly: readOnlyBool,

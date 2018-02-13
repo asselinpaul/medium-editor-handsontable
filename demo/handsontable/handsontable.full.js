@@ -15726,12 +15726,7 @@ function checkboxRenderer(instance, TD, row, col, prop, value, cellProperties) {
   } else if (value === null) {
     dom.addClass(input, 'noValue');
     TD.appendChild(input);
-  } else {
-    input.style.display = 'none';
-    dom.addClass(input, BAD_VALUE_CLASS);
-    TD.appendChild(input);
-    TD.appendChild(document.createTextNode('#bad-value#'));
-  }
+  } 
   if (cellProperties.readOnly) {
     eventManager.addEventListener(input, 'click', preventDefault);
   } else {
